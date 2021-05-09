@@ -1,19 +1,37 @@
 const gridContainer = document.querySelector(".sketch_div");
+let containerHeight = document.querySelector(".sketch_div").clientHeight;
 //const gridBlock = document.createElement("div");
 
 
+/* GENERATE BLOCKS INTO THE GRID */
 
-for(let i = 0; i <= 5; i++){
-    const gridBlock = document.createElement("div");
-    gridBlock.classList.add("grid_block");
-    gridContainer.appendChild(gridBlock);
-}
-
-
-
-
+//let numBlocks = parseInt(prompt("Give number of blocks"));
+let numBlocks = 5;
+let blockSize = containerHeight / numBlocks;
 
 
 //loop through number of blocks example 16x16
-//each time create a div gridBlock
-//assign its class
+for(let i = 1; i <= numBlocks*numBlocks; i++){
+    //each time create a div gridBlock
+    const gridBlock = document.createElement("div");
+    //assign its class
+    gridBlock.classList.add("grid_block");
+    //resize it
+    gridBlock.style.cssText = `height: ${blockSize}px;`;
+    gridContainer.appendChild(gridBlock);
+
+}
+
+//put the blocks inside the gird container
+gridContainer.style.cssText = `grid-template-columns: repeat(${numBlocks}, ${blockSize}px);`;
+
+
+
+const blocks = document.querySelectorAll(".grid_block");
+
+blocks.forEach(block => block.addEventListener("mouseover", (e) => {
+    block.style.backgroundColor = "blueviolet";
+
+}));
+
+

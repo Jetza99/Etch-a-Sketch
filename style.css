@@ -1,6 +1,9 @@
 body{
     margin: 0;
-    
+    background: #283048;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 main{
@@ -10,20 +13,23 @@ main{
 
 .sketch_div{
     display: inline-block;
-    height: 75%;
-    width: 40%;
-    background-color: blue;
+    height: 75vh;
+    width: 75vh;
     position: absolute;
     right: 0;
     margin: 40px 40px 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, height);
-    grid-auto-rows: 1fr;
+    -webkit-box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
+    -moz-box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
+    box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
 }
 
 .grid_block{
-    border:  2px solid black;
+    border:  1px solid rgba(172, 172, 172, 0.562);
     background-color: white;
-
+    
 }
+
+
+
 
