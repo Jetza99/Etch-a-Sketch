@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Tech Font";
+    src: url("/fonts/OriginTech\ personal\ use.otf");
+}
+
 body{
     margin: 0;
     background: #283048;  /* fallback for old browsers */
@@ -11,10 +16,66 @@ main{
     position: relative;
 }
 
+
+
+    
+header{
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+
+@media screen and (min-width: 1920px) {
+    header{
+        display: inline-block;
+        position: absolute;
+        top: 13%;
+        left: 13%;
+    }
+
+}
+
+.head{
+    font-family: "Tech Font";    
+    font-size: 2rem;
+    color: #ffebcd;
+    text-align: center;
+}
+
+.options_bar{
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    height: 70%;
+    width: 25%;
+
+ 
+}
+
+.blur{
+    display: inline-block;
+    background-color: #3e476342;
+    filter: blur(1px);
+    height: 100%;
+    width: 100%;
+}
+
+h2{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    font-size: 1.5rem;
+}
+
+
 .sketch_div{
     display: inline-block;
-    height: 75vh;
-    width: 75vh;
+    height: 90vh;
+    width: 90vh;
     position: absolute;
     right: 0;
     margin: 40px 40px 0 0;
@@ -22,11 +83,13 @@ main{
     -webkit-box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
     -moz-box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
     box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
+    overflow: hidden;
+
 }
 
 .grid_block{
     border:  1px solid rgba(172, 172, 172, 0.562);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.041);
     
 }
 

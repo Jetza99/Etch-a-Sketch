@@ -6,8 +6,8 @@ let containerHeight = document.querySelector(".sketch_div").clientHeight;
 /* GENERATE BLOCKS INTO THE GRID */
 
 //let numBlocks = parseInt(prompt("Give number of blocks"));
-let numBlocks = 5;
-let blockSize = containerHeight / numBlocks;
+let numBlocks = 10;
+let blockSize = Math.round(containerHeight / numBlocks);
 
 
 //loop through number of blocks example 16x16
@@ -23,7 +23,7 @@ for(let i = 1; i <= numBlocks*numBlocks; i++){
 }
 
 //put the blocks inside the gird container
-gridContainer.style.cssText = `grid-template-columns: repeat(${numBlocks}, ${blockSize}px);`;
+gridContainer.style.cssText = `grid-template-columns: repeat(auto-fill, ${blockSize}px);`;
 
 
 
