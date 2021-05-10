@@ -2,6 +2,7 @@ const gridContainer = document.querySelector(".sketch_div");
 let containerHeight = document.querySelector(".sketch_div").clientHeight;
 const colorPicker = document.querySelector("#pen_color");
 const bgColorPicker = document.querySelector("#bg_color");
+const eraserBtn = document.querySelector("#eraser_btn");
 
 let colorPicked = colorPicker.value;
 let bgColorPicked = bgColorPicker.value;
@@ -46,6 +47,35 @@ blocks.forEach(block => block.style.backgroundColor = `${bgColorPicked}`);
 blocks.forEach(block => block.addEventListener("mouseover", (e) => {
 block.style.backgroundColor = `${colorPicked}`;
     }));
+
+
+    eraserBtn.addEventListener('click' ,() => {
+        let isToggled = true;
+        while(isToggled){
+            eraser();
+            eraserBtn.addEventListener('click' ,() => {
+                isToggled = false;
+            });
+        }
+
+    
+    });
+
+
+    function eraser(){
+        eraserBtn.addEventListener('click' ,() => {
+            eraserBtn.classList.toggle("not_toggled");
+            eraserBtn.classList.toggle("toggled");
+                blocks.forEach(block => block.addEventListener("mouseover", (e) => {
+                    block.style.backgroundColor = `${bgColorPicked}`;
+                        }));
+            
+        });
+    }
+
+   
+
+
 
 
 

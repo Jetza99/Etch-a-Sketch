@@ -50,24 +50,6 @@ label{
     font-size: 28px;
 }
 
-@media screen and (min-width: 1920px) {
-    header{
-        display: inline-block;
-        position: absolute;
-        top: 13%;
-        left: 13%;
-    }
-    .pen_color_label{
-        top: 16%;
-        left: 30%;
-    }
-
-    .bg_color_label{
-        margin-top: 24%;
-    }
-    
-
-}
 
 .head{
     font-family: "Tech Font";    
@@ -96,17 +78,74 @@ label{
 }
 
 input[type="color"]{
+    display: inline-block;
+    position: absolute;
+    top: 15%;
+    left: 15%;
     z-index: 1;
     height: 6vh;
     width: 10vh;
     -webkit-appearance: none;
     border: none;
     background-color: rgba(0, 0, 0, 0);
+}
+
+.toggled{
     display: inline-block;
     position: absolute;
-    top: 15%;
-    left: 15%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    background-color: #283048;
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Hemi Head", monospace;
+    font-size: 20px;
+    color: #fff8dc;;
+    margin: 4px 2px;
+    border-radius: 20px;
+
 }
+
+
+.not_toggled{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    background-color: #fff8dc;
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Hemi Head", monospace;
+    font-size: 20px;
+    color: #283048;
+    margin: 4px 2px;
+    border-radius: 20px;
+
+
+}
+
+
+input[type="button"]:hover{
+    animation-name: anim_btn;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes anim_btn {
+    from{box-shadow: none;}
+    to{box-shadow: 0px 8px 15px 0px rgb(155, 158, 175);}
+}
+
 
 
 
@@ -132,7 +171,7 @@ input[type="color"]{
     -moz-box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
     box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
     overflow: hidden;
-    
+
 }
 
 .grid_block{
@@ -143,4 +182,22 @@ input[type="color"]{
 
 
 
+@media screen and (min-width: 1920px) {
+    header{
+        display: inline-block;
+        position: absolute;
+        top: 13%;
+        left: 13%;
+    }
+    .pen_color_label{
+        top: 16%;
+        left: 30%;
+    }
+
+    .bg_color_label{
+        margin-top: 24%;
+    }
+    
+
+}
 
