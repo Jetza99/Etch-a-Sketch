@@ -2,6 +2,10 @@
     font-family: "Tech Font";
     src: url("/fonts/OriginTech\ personal\ use.otf");
 }
+@font-face {
+    font-family: "Hemi Head";
+    src: url("/fonts/hemi\ head\ bd\ it.ttf");
+}
 
 body{
     margin: 0;
@@ -26,6 +30,25 @@ header{
     left: 10%;
 }
 
+label{
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: 14%;
+    left: 30%;
+    margin-left: 12%;
+    font-family: "Hemi Head", monospace;
+    color: #fff8dc;
+}
+
+.pen_color_label{
+    font-size: 28px;
+}
+
+.bg_color_label{
+    margin-top: 20%;
+    font-size: 28px;
+}
 
 @media screen and (min-width: 1920px) {
     header{
@@ -34,6 +57,15 @@ header{
         top: 13%;
         left: 13%;
     }
+    .pen_color_label{
+        top: 16%;
+        left: 30%;
+    }
+
+    .bg_color_label{
+        margin-top: 24%;
+    }
+    
 
 }
 
@@ -51,7 +83,6 @@ header{
     left: 8%;
     height: 70%;
     width: 25%;
-
  
 }
 
@@ -61,15 +92,32 @@ header{
     filter: blur(1px);
     height: 100%;
     width: 100%;
+
 }
 
-h2{
+input[type="color"]{
+    z-index: 1;
+    height: 6vh;
+    width: 10vh;
+    -webkit-appearance: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
     display: inline-block;
     position: absolute;
-    top: 0;
-    right: 10%;
-    font-size: 1.5rem;
+    top: 15%;
+    left: 15%;
 }
+
+
+
+#bg_color{
+    margin-top: 20%;
+}
+
+
+
+
+
 
 
 .sketch_div{
@@ -84,7 +132,7 @@ h2{
     -moz-box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
     box-shadow: -1px 7px 39px -2px rgba(13,13,13,1);
     overflow: hidden;
-
+    
 }
 
 .grid_block{
