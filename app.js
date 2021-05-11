@@ -4,9 +4,12 @@ let containerHeight = document.querySelector(".sketch_div").clientHeight;
 const colorPicker = document.querySelector("#pen_color");
 const bgColorPicker = document.querySelector("#bg_color");
 const eraserBtn = document.querySelector("#eraser_btn");
+const rainbowBtn = document.querySelector("#rainbow_btn");
+const resetBtn = document.querySelector("#reset_btn");
 
 let colorPicked = colorPicker.value;
 let bgColorPicked = bgColorPicker.value;
+let rainbowArr = ["Violet", "Indigo", "Blue", "Green", "Yellow", "Orange", "Red"];
 
 /* GENERATE BLOCKS INTO THE GRID */
 
@@ -51,37 +54,104 @@ blocks.forEach(block => block.addEventListener('mouseover', function(){
     block.style.backgroundColor = `${colorPicked}`;
 }));
 
+/*  RESET BUTTON FUNCTIONALITY */
+
+
+resetBtn.addEventListener('click' , () => {
+    resetBtn.classList.toggle("not_toggled");
+    resetBtn.classList.toggle("toggled");
+    setTimeout(function(){
+        resetBtn.classList.toggle("not_toggled");
+        resetBtn.classList.toggle("toggled");
+    }, 100);
+    blocks.forEach(block => block.style.backgroundColor = "White");
+});
 
 
 /*  ERASER BUTTON FUNCTIONALITY */
-    let isToggled = false;
-    eraserBtn.addEventListener('click' , clickedFunction);
+    let eraseButtonToggled = false;
+    eraserBtn.addEventListener('click' , eraserClicked);
 
 
-    function clickedFunction() {
-        if(isToggled == false){
+    function eraserClicked() {
+        if((eraseButtonToggled == false) && (rainbowButtonToggled == false)){
             eraserBtn.classList.toggle("not_toggled");
             eraserBtn.classList.toggle("toggled");
-            isToggled = true;
+            eraseButtonToggled = true;
             blocks.forEach(block => block.addEventListener('mouseover', function(){
                 block.style.backgroundColor = `${bgColorPicked}`;
             }));
-        } else if(isToggled == true){
+        } else if(eraseButtonToggled == true){
             eraserBtn.classList.toggle("not_toggled");
             eraserBtn.classList.toggle("toggled");
-            isToggled = false;
+            eraseButtonToggled = false;
             blocks.forEach(block => block.addEventListener('mouseover', function(){
                 block.style.backgroundColor = `${colorPicked}`;
+        }));
+    }
+
+    if((eraseButtonToggled == false) && (rainbowButtonToggled == true)){
+        rainbowBtn.classList.toggle("not_toggled");
+        rainbowBtn.classList.toggle("toggled");
+        rainbowButtonToggled = false;
+
+        eraserBtn.classList.toggle("not_toggled");
+        eraserBtn.classList.toggle("toggled");
+        eraseButtonToggled = true;
+        blocks.forEach(block => block.addEventListener('mouseover', function(){
+            block.style.backgroundColor = `${bgColorPicked}`;
         }));
     }
 }
 
 
+/*  RAINBOW BUTTON FUNCTIONALITY */
 
-
+function randomRainbowColor(){
+    let x = 0;
+    x = Math.floor(Math.random() * 7);
+    return rainbowArr[x];
+}
    
+let rainbowButtonToggled = false;
+rainbowBtn.addEventListener('click' , rainbowClicked);
 
 
+function rainbowClicked(){
+    if((rainbowButtonToggled == false) && (eraseButtonToggled == false)){
+        rainbowBtn.classList.toggle("not_toggled");
+        rainbowBtn.classList.toggle("toggled");
+        rainbowButtonToggled = true;
+        blocks.forEach(block => block.addEventListener('mouseover', function(){
+            block.style.backgroundColor = `${randomRainbowColor()}`;
+        }));
+        
+    }else if(rainbowButtonToggled == true){
+        rainbowBtn.classList.toggle("not_toggled");
+        rainbowBtn.classList.toggle("toggled");
+        rainbowButtonToggled = false;
+        blocks.forEach(block => block.addEventListener('mouseover', function(){
+            block.style.backgroundColor = `${colorPicked}`;
+        }));
+}
+
+if((rainbowButtonToggled == false) && (eraseButtonToggled == true)){
+    eraserBtn.classList.toggle("not_toggled");
+    eraserBtn.classList.toggle("toggled");
+    eraseButtonToggled = false;
+    rainbowBtn.classList.toggle("not_toggled");
+    rainbowBtn.classList.toggle("toggled");
+    rainbowButtonToggled = true;
+    blocks.forEach(block => block.addEventListener('mouseover', function(){
+        block.style.backgroundColor = `${randomRainbowColor()}`;
+    }));
+    
+}
+
+}
+
+/*  RAINBOW BUTTON FUNCTIONALITY */
+// blocks.forEach(block => block.block.style.backgroundColor = "White");
 
 
 

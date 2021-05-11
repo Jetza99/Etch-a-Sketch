@@ -126,12 +126,22 @@ input[type="color"]{
     font-family: "Hemi Head", monospace;
     font-size: 20px;
     color: #283048;
-    margin: 4px 2px;
     border-radius: 20px;
 
 
 }
 
+#rainbow_btn{
+    margin-top: 25%;
+    padding: 20px 13px;
+
+}
+
+#reset_btn{
+    margin-top: 50%;
+    padding: 20px 28px;
+
+}
 
 input[type="button"]:hover{
     animation-name: anim_btn;
@@ -197,7 +207,27 @@ input[type="button"]:hover{
     .bg_color_label{
         margin-top: 24%;
     }
-    
 
+    .toggled{
+        font-size: 35px;
+        padding: 30px;
+    }
+
+    .not_toggled{
+        font-size: 35px;
+        padding: 30px;
+    }
+    
+    #rainbow_btn{
+        margin-top: 25%;
+        padding: 30px 13px;
+    
+    }
+    
+    #reset_btn{
+        margin-top: 50%;
+        padding: 30px 35px;
+    
+    }
 }
 
