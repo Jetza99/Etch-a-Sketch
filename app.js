@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 const gridContainer = document.querySelector(".sketch_div");
 let containerHeight = document.querySelector(".sketch_div").clientHeight;
 const colorPicker = document.querySelector("#pen_color");
@@ -40,38 +41,43 @@ bgColorPicker.addEventListener("input", () => {
 
 });
 
+let paint = false;
+
 
 const blocks = document.querySelectorAll(".grid_block");
 blocks.forEach(block => block.style.backgroundColor = `${bgColorPicked}`);
 
-blocks.forEach(block => block.addEventListener("mouseover", (e) => {
-block.style.backgroundColor = `${colorPicked}`;
-    }));
+blocks.forEach(block => block.addEventListener('mouseover', function(){
+    block.style.backgroundColor = `${colorPicked}`;
+}));
 
 
-    eraserBtn.addEventListener('click' ,() => {
-        let isToggled = true;
-        while(isToggled){
-            eraser();
-            eraserBtn.addEventListener('click' ,() => {
-                isToggled = false;
-            });
-        }
 
-    
-    });
+/*  ERASER BUTTON FUNCTIONALITY */
+    let isToggled = false;
+    eraserBtn.addEventListener('click' , clickedFunction);
 
 
-    function eraser(){
-        eraserBtn.addEventListener('click' ,() => {
+    function clickedFunction() {
+        if(isToggled == false){
             eraserBtn.classList.toggle("not_toggled");
             eraserBtn.classList.toggle("toggled");
-                blocks.forEach(block => block.addEventListener("mouseover", (e) => {
-                    block.style.backgroundColor = `${bgColorPicked}`;
-                        }));
-            
-        });
+            isToggled = true;
+            blocks.forEach(block => block.addEventListener('mouseover', function(){
+                block.style.backgroundColor = `${bgColorPicked}`;
+            }));
+        } else if(isToggled == true){
+            eraserBtn.classList.toggle("not_toggled");
+            eraserBtn.classList.toggle("toggled");
+            isToggled = false;
+            blocks.forEach(block => block.addEventListener('mouseover', function(){
+                block.style.backgroundColor = `${colorPicked}`;
+        }));
     }
+}
+
+
+
 
    
 
