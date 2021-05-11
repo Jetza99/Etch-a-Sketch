@@ -64,7 +64,8 @@ resetBtn.addEventListener('click' , () => {
         resetBtn.classList.toggle("not_toggled");
         resetBtn.classList.toggle("toggled");
     }, 100);
-    blocks.forEach(block => block.style.backgroundColor = "White");
+    bgColorPicked = "#fff";
+    blocks.forEach(block => block.style.backgroundColor = `${bgColorPicked}`);
 });
 
 
