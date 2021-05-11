@@ -65,6 +65,7 @@ resetBtn.addEventListener('click' , () => {
         resetBtn.classList.toggle("toggled");
     }, 100);
     bgColorPicked = "#fff";
+    bgColorPicker.value = "#FFFFFF";
     blocks.forEach(block => block.style.backgroundColor = `${bgColorPicked}`);
 });
 
