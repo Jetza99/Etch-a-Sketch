@@ -104,7 +104,6 @@ resetBtn.addEventListener('click' , () => {
     }
 }
 
-
 /*  RAINBOW BUTTON FUNCTIONALITY */
 
 function randomRainbowColor(){
