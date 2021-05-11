@@ -13,8 +13,7 @@ let rainbowArr = ["Violet", "Indigo", "Blue", "Green", "Yellow", "Orange", "Red"
 
 /* GENERATE BLOCKS INTO THE GRID */
 
-//let numBlocks = parseInt(prompt("Give number of blocks"));
-let numBlocks = 10;
+let numBlocks = parseInt(prompt("Give number of blocks"));
 let blockSize = Math.round(containerHeight / numBlocks);
 
 
