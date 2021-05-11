@@ -1,10 +1,10 @@
 @font-face {
     font-family: "Tech Font";
-    src: url("/fonts/OriginTech\ personal\ use.otf");
+    src: url("../Etch-a-Sketch/fonts/OriginTech\ personal\ use.otf");
 }
 @font-face {
     font-family: "Hemi Head";
-    src: url("/fonts/hemi\ head\ bd\ it.ttf");
+    src: url("../Etch-a-Sketch/fonts/hemi\ head\ bd\ it.ttf");
 }
 
 body{
